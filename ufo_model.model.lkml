@@ -17,3 +17,10 @@ include: "*.dashboard.lookml"  # include all dashboards in this project
 #     sql_on: ${users.id} = ${orders.user_id} ;;
 #   }
 # }
+explore: ufo_data {}
+
+#dimension: field_name {
+#  type: location
+#  sql_latitude:${field_name_1} ;;
+#  sql_longitude:${field_name_2} ;;
+#}

@@ -75,6 +75,12 @@ view: ufo_data {
     sql: ${TABLE}.state ;;
   }
 
+  dimension: field_name {
+  type: location
+  sql_latitude:${latitude} ;;
+  sql_longitude:${longitude} ;;
+}
+
   measure: count {
     type: count
     drill_fields: []
