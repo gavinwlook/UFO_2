@@ -96,10 +96,16 @@ view: ufo_data {
     sql: ${duration} ;;
     value_format: "0.##"
   }
-
   measure: average_latitude {
     type:  average
     sql: ${latitude} ;;
     value_format: "0.##"
   }
+  measure: average_longitude {
+    type:  average
+    sql: ${longitude} ;;
+    value_format: "0.##"
+  }
+
+
 }
