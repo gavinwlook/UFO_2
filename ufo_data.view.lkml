@@ -85,4 +85,8 @@ view: ufo_data {
     type: count
     drill_fields: []
   }
+  measure: average_duration {
+    type:  average
+    sql: ${duration} ;;
+  }
 }
