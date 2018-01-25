@@ -75,7 +75,7 @@ view: ufo_data {
     sql: ${TABLE}.state ;;
   }
 
-  dimension: field_name {
+  dimension: location {
   type: location
   sql_latitude:${latitude} ;;
   sql_longitude:${longitude} ;;
