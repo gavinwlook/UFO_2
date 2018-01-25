@@ -94,5 +94,6 @@ view: ufo_data {
   measure: average_duration {
     type:  average
     sql: ${duration} ;;
+    value_format: "0.##"
   }
 }
