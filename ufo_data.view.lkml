@@ -61,10 +61,15 @@ view: ufo_data {
     timeframes: [
       raw,
       time,
+      hour_of_day,
+      hour,
+      hour2,
       day_of_week,
       date,
       week,
+      week_of_year,
       month,
+      month_name,
       quarter,
       year
     ]
