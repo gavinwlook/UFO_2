@@ -3,6 +3,13 @@ connection: "postgres_local"
 include: "*.view.lkml"         # include all views in this project
 include: "*.dashboard.lookml"  # include all dashboards in this project
 
+datagroup: Xfiles {
+  sql_trigger: CASE WHEN SELECT COUNT(*) FROM ufo_data >= 5000
+THEN SELECT count(*) FROM ufo_data
+ELSE NULL
+END  ;;
+}
+
 # # Select the views that should be a part of this model,
 # # and define the joins that connect them together.
 #
