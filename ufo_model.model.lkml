@@ -3,7 +3,7 @@ connection: "postgres_local"
 include: "*.view.lkml"         # include all views in this project
 include: "*.dashboard.lookml"  # include all dashboards in this project
 
-datagroup: Xfiles {
+datagroup: Xfiles2 {
   sql_trigger: select count(*) from ufo_data having count(*) > 5000;;
 }
 
