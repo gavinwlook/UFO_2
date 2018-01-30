@@ -12,6 +12,7 @@ view: location_view {
         shape ;;
 
     persist_for: "24 hours"
+    indexes: ["shape"]
   }
 
   dimension: shape {

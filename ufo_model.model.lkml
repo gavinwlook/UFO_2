@@ -23,7 +23,24 @@ datagroup: Xfiles2 {
 #     sql_on: ${users.id} = ${orders.user_id} ;;
 #   }
 # }
-explore: ufo_data {}
+explore: ufo_data {
+
+  join: location_view {
+
+    view_label: "UFO Locations"
+    fields:  [shape, average_latitude, average_longitude]
+    foreign_key: shape
+    from: location_view
+    outer_only: no
+    relationship: many_to_one
+    #sql_on: ufo_data.shape = location_view.shape ;;
+    sql_table_name: ufo_data ;;
+    type: inner
+
+
+  }
+
+}
 
 #dimension: field_name {
 #  type: location
