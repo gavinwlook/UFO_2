@@ -4,8 +4,8 @@ view: location_view {
     sql:
       SELECT
         shape,
-        AVG(latitude) AS avg_latitude,
-        AVG(longitude) AS avg_longitude
+        AVG(latitude) AS "average_latitude",
+        AVG(longitude) AS "average_longitude"
       FROM
         public.ufo_data
       GROUP BY
