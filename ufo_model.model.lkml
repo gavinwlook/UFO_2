@@ -4,7 +4,9 @@ include: "*.view.lkml"         # include all views in this project
 include: "*.dashboard.lookml"  # include all dashboards in this project
 
 datagroup: Xfiles2 {
-  sql_trigger: select count(*) from ufo_data having count(*) > 5000;;
+  sql_trigger: SELECT CASE WHEN count(*) >= 5000 THEN 'yes'
+            ELSE NULL end
+  FROM ufo_data;;
 }
 
 # # Select the views that should be a part of this model,
