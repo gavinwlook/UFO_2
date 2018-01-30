@@ -32,7 +32,7 @@ view: location_view {
     sql: ${TABLE}.avg_latitude ;;
     value_format: "string"
   }
-dimension: average_longitude {
+ dimension: average_longitude {
     type:  string
     sql: ${TABLE}.avg_longitude ;;
     value_format: "string"}
