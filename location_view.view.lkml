@@ -26,10 +26,14 @@ view: location_view {
     sql: ${TABLE}.avg_latitude ;;
     value_format: "0.##"
   }
-  measure: average_longitude {
+ measure: average_longitude {
     type:  average
-    sql: $${TABLE}.avg_longitude ;;
-    value_format: "0.##"
-  }
+    sql: ${TABLE}.avg_longitude ;;
+    value_format: "0.##"}
 
+  dimension: avg_location {
+    type:  location
+    sql_latitude: ${TABLE}.avg_latitude ;;
+    sql_longitude: ${TABLE}.avg_longitude ;;
  }
+}
