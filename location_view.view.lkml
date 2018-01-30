@@ -15,11 +15,11 @@ view: location_view {
     indexes: ["shape"]
   }
 
-  dimension: avg_location {
-    type:  location
-    sql_latitude: ${TABLE}.avg_latitude ;;
-    sql_longitude: ${TABLE}.avg_longitude ;;
-  }
+#  dimension: avg_location {
+#    type:  location
+#    sql_latitude: ${TABLE}.avg_latitude ;;
+#    sql_longitude: ${TABLE}.avg_longitude ;;
+#  }
 
   dimension: shape {
       type: string
