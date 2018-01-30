@@ -1,4 +1,4 @@
-view: location_pdt {
+view: location_view {
   sql_table_name: public.ufo_data ;;
 
   dimension: shape {
