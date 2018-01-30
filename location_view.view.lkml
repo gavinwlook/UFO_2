@@ -28,13 +28,13 @@ view: location_view {
       }
 
   dimension: average_latitude {
-    type:  string
+    type:  number
     sql: ${TABLE}.avg_latitude ;;
-    value_format: "string"
+
   }
  dimension: average_longitude {
-    type:  string
+    type:  number
     sql: ${TABLE}.avg_longitude ;;
-    value_format: "string"}
-
+#    value_format: "string"}
+}
 }
