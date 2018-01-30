@@ -27,14 +27,14 @@ view: location_view {
       sql: ${TABLE}.shape ;;
       }
 
-  measure: average_latitude {
-    type:  average
+  dimension: average_latitude {
+    type:  string
     sql: ${TABLE}.avg_latitude ;;
-    value_format: "0.##"
+    value_format: "string"
   }
- measure: average_longitude {
-    type:  average
+dimension: average_longitude {
+    type:  string
     sql: ${TABLE}.avg_longitude ;;
-    value_format: "0.##"}
+    value_format: "string"}
 
 }
