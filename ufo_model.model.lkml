@@ -19,7 +19,7 @@ explore: ufo_data {
     from: average_locations_by_shape
     outer_only: no
     relationship: many_to_one
-    sql_on: ufo_data.shape = location_view.shape ;;
+    sql_on: ufo_data.shape = average_locations_by_shape.shape ;;
     sql_table_name: ufo_data ;;
     type: inner
 
