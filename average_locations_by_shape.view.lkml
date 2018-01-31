@@ -8,6 +8,8 @@ view: average_locations_by_shape {
         public.ufo_data
       GROUP BY
         shape;;
+    persist_for: "24 hours"
+    indexes: ["shape"]
   }
 
   measure: count {
