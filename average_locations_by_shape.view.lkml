@@ -2,8 +2,8 @@ view: average_locations_by_shape {
   derived_table: {
     sql: SELECT
         shape,
-        AVG(latitude) AS aver_latitude,
-        AVG(longitude) AS aver_longitude
+        AVG(latitude) AS "aver_latitude",
+        AVG(longitude) AS "aver_longitude"
       FROM
         public.ufo_data
       GROUP BY
