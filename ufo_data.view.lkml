@@ -1,6 +1,12 @@
 view: ufo_data {
   sql_table_name: public.ufo_data ;;
 
+  dimension: compound_primary_key {
+    primary_key: yes
+    hidden: yes
+    sql: CONCAT(${TABLE}.sighting.raw, '  ', ${TABLE}.location) ;;
+  }
+
   dimension: city {
     type: string
     sql: ${TABLE}.city ;;
