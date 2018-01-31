@@ -33,6 +33,12 @@ view: average_locations_by_shape {
     sql: ${TABLE}.aver_longitude ;;
   }
 
+  dimension: avg_location {
+    type: location
+    sql_latitude: ${TABLE}.aver_latitude ;;
+    sql_longitude:${TABLE}.aver_longitude;;
+  }
+
   set: detail {
     fields: [shape, aver_latitude, aver_longitude]
   }
