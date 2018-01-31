@@ -1,40 +1,41 @@
 view: location_view {
 
-  derived_table: {
-    sql:
-      SELECT
+    derived_table: {
+      sql: SELECT
         shape,
-        AVG(latitude) AS "average_latitude",
-        AVG(longitude) AS "average_longitude"
+        AVG(latitude) AS avg_latitude,
+        AVG(longitude) AS avg_longitude
       FROM
         public.ufo_data
       GROUP BY
-        shape ;;
+        shape
+ ;;
+      persist_for: "24 hours"
+      indexes: ["shape"]
+    }
 
-    persist_for: "24 hours"
-    indexes: ["shape"]
-  }
+    measure: count {
+      type: count
+      drill_fields: [detail*]
+    }
 
-#  dimension: avg_location {
-#    type:  location
-#    sql_latitude: ${TABLE}.avg_latitude ;;
-#    sql_longitude: ${TABLE}.avg_longitude ;;
-#  }
-
-  dimension: shape {
-      type: string
+    dimension: shape {
       primary_key: yes
+      type: string
       sql: ${TABLE}.shape ;;
-      }
+    }
 
-  dimension: average_latitude {
-    type:  number
-    sql: ${TABLE}.avg_latitude ;;
+    dimension: avg_latitude {
+      type: string
+      sql: ${TABLE}.avg_latitude ;;
+    }
 
+    dimension: avg_longitude {
+      type: string
+      sql: ${TABLE}.avg_longitude ;;
+    }
+
+    set: detail {
+      fields: [shape, avg_latitude, avg_longitude]
+    }
   }
- dimension: average_longitude {
-    type:  number
-    sql: ${TABLE}.avg_longitude ;;
-#    value_format: "string"}
-}
-}

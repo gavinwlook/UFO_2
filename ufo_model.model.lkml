@@ -28,7 +28,7 @@ explore: ufo_data {
   join: location_view {
 
     view_label: "UFO Locations"
-    fields:  [shape, average_latitude, average_longitude]
+    fields:  [shape, avg_latitude, avg_longitude]
     foreign_key: shape
     from: location_view
     outer_only: no
