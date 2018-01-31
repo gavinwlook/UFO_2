@@ -3,8 +3,8 @@ view: location_view {
     derived_table: {
       sql: SELECT
         shape,
-        AVG(latitude) AS avg_latitude,
-        AVG(longitude) AS avg_longitude
+        AVG(latitude) AS aver_latitude,
+        AVG(longitude) AS aver_longitude
       FROM
         public.ufo_data
       GROUP BY
@@ -25,17 +25,17 @@ view: location_view {
       sql: ${TABLE}.shape ;;
     }
 
-    dimension: avg_latitude {
+    dimension: aver_latitude {
       type: string
-      sql: ${TABLE}.avg_latitude ;;
+      sql: ${TABLE}.aver_latitude ;;
     }
 
-    dimension: avg_longitude {
+    dimension: aver_longitude {
       type: string
-      sql: ${TABLE}.avg_longitude ;;
+      sql: ${TABLE}.aver_longitude ;;
     }
 
     set: detail {
-      fields: [shape, avg_latitude, avg_longitude]
+      fields: [shape, aver_latitude, aver_longitude]
     }
   }
