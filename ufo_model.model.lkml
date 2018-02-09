@@ -11,10 +11,17 @@ datagroup: Xfiles2 {
 
 explore: ufo_data {
 
+  always_filter: {
+    filters: {
+      field: country
+      value: "us"
+    }
+  }
+
   join: average_locations_by_shape {
 
     view_label: "UFO Locations"
-    fields:  [shape, aver_latitude, aver_longitude, avg_location]
+    fields:  [shape, avg_location]
     relationship: many_to_one
     sql_on: ufo_data.shape = average_locations_by_shape.shape ;;
     type: inner

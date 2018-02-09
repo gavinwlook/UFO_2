@@ -14,7 +14,7 @@ view: average_locations_by_shape {
 
   measure: count {
     type: count
-    drill_fields: [detail*]
+    drill_fields: []
   }
 
   dimension: shape {
