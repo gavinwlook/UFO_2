@@ -1,4 +1,7 @@
 view: average_locations_by_shape {
+
+  view_label: "Average Location By Shape"
+
   derived_table: {
     sql: SELECT
         shape,

@@ -1,6 +1,8 @@
 view: ufo_data {
   sql_table_name: public.ufo_data ;;
 
+  view_label: "UFO Data"
+
   dimension: compound_primary_key {
     primary_key: yes
     hidden: yes
@@ -118,6 +120,25 @@ view: ufo_data {
     sql: ${longitude} ;;
     value_format: "0.##"
   }
+
+  measure: min_duration {
+    type: min
+    sql: ${duration} ;;
+    value_format: "0"
+  }
+
+  measure: max_duration {
+    type: max
+    sql: ${duration} ;;
+    value_format: "0"
+  }
+
+  measure: sum_distinct {
+    type: sum_distinct
+    sql: ${city} ;;
+  }
+
+
   #measure: average_location{
   #  type:  average
   #  sql: ${location} ;;
