@@ -27,9 +27,17 @@ explore: ufo_data {
     relationship: many_to_one
     sql_on: ufo_data.shape = average_locations_by_shape.shape ;;
     type: inner
-
-
   }
+
+  join: average_locations_by_triangle {
+    view_label: "UFO Triangle Locations"
+    from: average_locations_by_shape
+    fields:  [shape, avg_location]
+    relationship: many_to_one
+    sql_on: ufo_data.shape = average_locations_by_triangle.shape and ufo_data.shape = "triangle";;
+    type: inner
+  }
+
 
 }
 

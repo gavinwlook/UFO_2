@@ -138,23 +138,23 @@ view: ufo_data {
     sql: ${city} ;;
   }
 
-  measure: weekend_count {
-    type: count_distinct
-    sql: ${TABLE}.id ;;
-    filters: {
-      field: sighting_day_of_week
-      value: "Saturday, Sunday"
-    }
-  }
+#  measure: weekend_count {
+#    type: count_distinct
+#    sql: ${compound_primary_key};;  #counting distinct primary key is obviously the same as counting them
+#    filters: {
+#      field: sighting_day_of_week
+#      value: "Saturday, Sunday"
+#    }
+#  }
 
-  measure: weekday_count {
-    type: count_distinct
-    sql: ${TABLE}.id ;;
-    filters: {
-      field: sighting_day_of_week
-      value: "-Saturday, -Sunday"
-    }
-  }
+#  measure: weekday_count {
+#    type: count_distinct
+#    sql: ${compound_primary_key} ;;
+#    filters: {
+#      field: sighting_day_of_week
+#      value: "-Saturday, -Sunday"
+#    }
+#  }
 
   #measure: average_location{
   #  type:  average
