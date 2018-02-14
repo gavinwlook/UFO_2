@@ -34,7 +34,7 @@ explore: ufo_data {
     from: average_locations_by_shape
     fields:  [shape, avg_location]
     relationship: many_to_one
-    sql_on: ufo_data.shape = average_locations_by_triangle.shape and ufo_data.shape = "triangle";;
+    sql_on: ufo_data.shape = average_locations_by_triangle.shape and ufo_data.shape = 'triangle';;
     type: inner
   }
 

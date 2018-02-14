@@ -138,6 +138,13 @@ view: ufo_data {
     sql: ${city} ;;
   }
 
+#  measure: running_total_of_sightings {
+#    type: running_total
+#    sql: ${city} ;;
+# }
+
+
+
 #  measure: weekend_count {
 #    type: count_distinct
 #    sql: ${compound_primary_key};;  #counting distinct primary key is obviously the same as counting them
