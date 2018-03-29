@@ -95,6 +95,25 @@ view: ufo_data {
   sql_longitude:${longitude} ;;
 }
 
+  dimension: hashed_city {
+    type: string
+    sql:
+      CASE WHEN '{{ _user_attributes["can_see_ssn"] }}' = 'y'
+        THEN ${TABLE}.shape
+      ELSE
+        MD5(${TABLE}.shape || ${TABLE}.city)
+      END ;;
+    #Note: || is string concatenation. Update as necessary for your SQL dialect.
+    # We are illustrating a salted hash to mask sensitive data, but you should
+    # consult with your information security team to evaluate the acceptability of this approach.
+      html:
+       {% if _user_attributes["can_see_ssn"]  == 'y' %}
+         {{ value }}
+       {% else %}
+         [Masked]
+       {% endif %}  ;;
+    }
+
   measure: count {
     type: count
    drill_fields: [location]
