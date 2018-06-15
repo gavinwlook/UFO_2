@@ -95,6 +95,16 @@ view: ufo_data {
   sql_longitude:${longitude} ;;
 }
 
+# Gratuitous changes for testing git
+
+#   dimension: location {
+#     type: location
+#     sql_latitude:${latitude} ;;
+#     sql_longitude:${longitude} ;;
+#   }
+#
+
+
   dimension: hashed_city {
     type: string
     sql:
