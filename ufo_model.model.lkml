@@ -4,9 +4,11 @@ include: "*.view.lkml"         # include all views in this project
 include: "*.dashboard.lookml"  # include all dashboards in this project
 
 datagroup: Xfiles2 {
-  sql_trigger: SELECT CASE WHEN count(*) >= 5000 THEN 'yes'
-            ELSE NULL end
-  FROM ufo_data;;
+  max_cache_age: "36 hours"
+#   sql_trigger: SELECT CASE WHEN count(*) >= 5000 THEN 'yes'
+#             ELSE NULL end
+#   FROM ufo_data;;
+
 }
 
 explore: ufo_data {
