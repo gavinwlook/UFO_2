@@ -22,6 +22,18 @@ explore: ufo_data {
     }
   }
 
+
+#   explore: ufo_data {
+#
+#     sql_always_where:  ufo_data.country = 'us' ;;
+#
+#     always_filter: {
+#       filters: {
+#         field: country
+#         value: "us"
+#       }
+#     }
+
   join: average_locations_by_shape {
 
     view_label: "UFO Locations"
