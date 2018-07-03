@@ -32,11 +32,33 @@ view: ufo_data {
       time,
       date,
       week,
+      week_of_year,
       month,
       quarter,
       year
     ]
     sql: ${TABLE}.date_posted ;;
+  }
+
+parameter: year_param {
+  suggest_dimension: date_posted_year
+  type: date
+
+}
+
+parameter: week_param {
+  suggest_dimension: date_posted_week_of_year
+  type: date
+}
+
+dimension: year_week {
+  type: string
+  sql: concat(date_part('year', ufo_data.sighting_date), '-', date_part('month', ufo_data.sighting_date)) ;;
+}
+
+  dimension: year_week2 {
+    type: date_week
+    sql: ufo_data.sighting_date ;;
   }
 
   dimension: duration {
