@@ -23,4 +23,9 @@ view: add_a_unique_name_1518186549 {
     label: "UFO Data Count"
     type: number
   }
+
+dimension: another_count {
+  label: "UFO Data Count"
+  type: number
+}
 }
