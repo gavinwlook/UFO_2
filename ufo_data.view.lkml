@@ -1,7 +1,7 @@
 view: ufo_data {
   sql_table_name: public.ufo_data ;;
 
-  view_label: "UFO Data"
+  view_label: "UFO TEST Data"
 
   dimension: compound_primary_key {
     primary_key: yes
