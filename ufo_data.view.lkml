@@ -71,10 +71,6 @@ dimension: year_week {
     sql: ${TABLE}.duration ;;
   }
 
-    dimension: duration3 {
-    type: number
-    sql: ${TABLE}.duration ;;
-  }
 
   dimension: duration_desc {
     type: string
