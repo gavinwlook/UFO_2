@@ -167,10 +167,10 @@ view: ufo_data {
     sql: ${city} ;;
   }
 
-#  measure: running_total_of_sightings {
-#    type: running_total
-#    sql: ${city} ;;
-# }
+ measure: running_total_of_sightings {
+   type: running_total
+   sql: ${city} ;;
+}
 
 
 
