@@ -1,7 +1,7 @@
 view: ufo_data {
   sql_table_name: public.ufo_data ;;
 
-  view_label: "UFO TEST222 Data"
+  view_label: "UFO TEST Data"
 
   dimension: compound_primary_key {
     primary_key: yes
@@ -199,43 +199,4 @@ dimension: year_week {
     sql: ${city} ;;
   }
 
-  measure: percent_complete {
-    type: sum
-    sql: duration / 100000000 ;;
-    html: <div style="float: left
-      {% if value < 0.7 %}
-      ; width:{{ value | times:100}}%
-      ; background-color: rgba(180,0,0,{{ value | times:100 }})
-      {% elsif  value < 1 %}
-      ; width:{{ value | times:100}}%
-      ; background-color: rgba(180,180,0,1)
-      {% else %}
-      ; width:100%
-      ; background-color: rgba(0,180,0,1)
-      {% endif %}
-      ; text-align:left
-      ; color: #FFFFFF
-      ; border-radius: 5px">
-      <p style="margin-bottom: 0
-      ; color:rgba(255,255,255,{{ value | round }})
-      ; margin-left: 4px">{{ value | times:100 | round: 1 }}%</p>
-      </div>
-      <div style="float: left
-      ; width:{{ 1| minus:value | times:100}}%
-      {% if value < 0.7 %}
-      ; background-color: rgba(180,0,0,0.1)
-      {% elsif value < 1 %}
-      ; background-color: rgba(180,180,0,0.1)
-      {% else %}
-      ; display:none
-      {% endif %}
-      ; text-align:left
-      ; color: #000000
-      ; border-radius: 5px">
-      <p style="margin-bottom: 0
-      ; color:rgba(0,0,0,{{ 1 | minus:value | round }})
-      ; margin-left: 4px">{{ value | times:100 | round: 1 }}%</p>
-      </div>
-    ;;
-  }
 }
