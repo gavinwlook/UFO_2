@@ -13,14 +13,14 @@ datagroup: Xfiles2 {
 
 explore: ufo_data {
 
-  sql_always_where:  ufo_data.country = 'us' ;;
+#   sql_always_where:  ufo_data.country = 'us' ;;
 
-  always_filter: {
-    filters: {
-      field: country
-      value: "us"
-    }
-  }
+#   always_filter: {
+#     filters: {
+#       field: country
+#       value: "us"
+#     }
+#   }
 
 
 #   explore: ufo_data {
