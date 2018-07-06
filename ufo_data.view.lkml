@@ -32,6 +32,7 @@ view: ufo_data {
       time,
       date,
       week,
+      week_of_year,
       month,
       quarter,
       year
@@ -39,7 +40,38 @@ view: ufo_data {
     sql: ${TABLE}.date_posted ;;
   }
 
+parameter: year_param {
+  suggest_dimension: date_posted_year
+  type: date
+
+}
+
+parameter: week_param {
+  suggest_dimension: date_posted_week_of_year
+  type: date
+}
+
+dimension: year_week {
+  type: string
+  sql: concat(date_part('year', ufo_data.sighting_date), '-', date_part('month', ufo_data.sighting_date)) ;;
+}
+
+  dimension: year_week2 {
+    type: date_week
+    sql: ufo_data.sighting_date ;;
+  }
+
   dimension: duration {
+    type: number
+    sql: ${TABLE}.duration ;;
+  }
+
+    dimension: duration2 {
+    type: number
+    sql: ${TABLE}.duration ;;
+  }
+
+    dimension: duration3 {
     type: number
     sql: ${TABLE}.duration ;;
   }
@@ -166,37 +198,5 @@ view: ufo_data {
     type: sum_distinct
     sql: ${city} ;;
   }
-
- measure: running_total_of_sightings {
-   type: running_total
-   sql: ${count} ;;
-}
-
-
-
-#  measure: weekend_count {
-#    type: count_distinct
-#    sql: ${compound_primary_key};;  #counting distinct primary key is obviously the same as counting them
-#    filters: {
-#      field: sighting_day_of_week
-#      value: "Saturday, Sunday"
-#    }
-#  }
-
-#  measure: weekday_count {
-#    type: count_distinct
-#    sql: ${compound_primary_key} ;;
-#    filters: {
-#      field: sighting_day_of_week
-#      value: "-Saturday, -Sunday"
-#    }
-#  }
-
-  #measure: average_location{
-  #  type:  average
-  #  sql: ${location} ;;
-  #}
-
-
 
 }
