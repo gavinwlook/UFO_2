@@ -1,7 +1,7 @@
 view: ufo_data {
   sql_table_name: public.ufo_data ;;
 
-  view_label: "UFO Data"
+  view_label: "UFO TEST222 Data"
 
   dimension: compound_primary_key {
     primary_key: yes
@@ -65,12 +65,12 @@ dimension: year_week {
     type: number
     sql: ${TABLE}.duration ;;
   }
-  
+
     dimension: duration2 {
     type: number
     sql: ${TABLE}.duration ;;
   }
-  
+
     dimension: duration3 {
     type: number
     sql: ${TABLE}.duration ;;
