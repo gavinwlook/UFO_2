@@ -157,6 +157,12 @@ dimension: year_week {
    drill_fields: [location]
   }
 
+  measure: count2 {
+    type: count
+    drill_fields: [location]
+  }
+
+
   measure: whatever {
     type: count_distinct
     drill_fields: [location]
