@@ -196,9 +196,28 @@ dimension: year_week {
     value_format: "0"
   }
 
+  measure: count_before_today {
+     type: count
+
+    filters: {
+      field: date_posted_date
+      value: "before yesterday"
+    }
+  }
+
   measure: sum_distinct {
     type: sum_distinct
     sql: ${city} ;;
   }
+
+  measure: test_60 {
+  type: sum sql: 183,080/60;;
+  }
+
+  measure: straight_count {
+    type: number
+    sql: count(*) ;;
+  }
+
 
 }
