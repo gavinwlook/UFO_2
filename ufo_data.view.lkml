@@ -205,14 +205,19 @@ dimension: year_week {
     }
   }
 
+  measure: median {
+    type: median
+    sql: COUNT(${shape}) ;;
+  }
+
   measure: sum_distinct {
     type: sum_distinct
     sql: ${city} ;;
   }
 
-  measure: test_60 {
-  type: sum sql: 183,080/60;;
-  }
+#   measure: test_60 {
+#   type: sum sql: 183,080/60;;
+#   }
 
   measure: straight_count {
     type: number

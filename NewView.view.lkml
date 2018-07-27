@@ -1,7 +1,7 @@
 # If necessary, uncomment the line below to include explore_source.
 include: "ufo_model.model.lkml"
 
-view: add_a_unique_name_1518186549 {
+view: NewView {
   derived_table: {
     explore_source: ufo_data {
       column: city {}

@@ -1,5 +1,6 @@
 view: TestPDT {
   derived_table: {
+    persist_for: "10 hours"
     explore_source: ufo_data {
       column: count {}
       column: shape {}
@@ -19,10 +20,12 @@ view: TestPDT {
   }
   dimension: sighting_month {
     label: "UFO TEST Data Sighting Month"
-    type: date_month
+    type: string
   }
-  measure: median_count {
-    label: "Median Count"
-    type: median
-  }
+
+   measure: median_count {
+     label: "Median Count"
+     type: median
+    sql: ${count} ;;
+   }
 }
