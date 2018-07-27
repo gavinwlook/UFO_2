@@ -11,16 +11,18 @@ datagroup: Xfiles2 {
 
 }
 
+explore:  pdt_example{}
+
 explore: ufo_data {
 
 #   sql_always_where:  ufo_data.country = 'us' ;;
 
-  always_filter: {
-    filters: {
-      field: country
-      value: "us"
-    }
-  }
+#   always_filter: {
+#     filters: {
+#       field: country
+#       value: "us"
+#     }
+#   }
 
 
 #   explore: ufo_data {
@@ -51,7 +53,6 @@ explore: ufo_data {
     sql_on: ufo_data.shape = average_locations_by_triangle.shape and ufo_data.shape = 'triangle';;
     type: inner
   }
-
 
 }
 
