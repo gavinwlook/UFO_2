@@ -15,15 +15,7 @@ explore:  pdt_example{}
 
 explore: ufo_data {
 
-#   sql_always_where:  ufo_data.country = 'us' ;;
-
-#   always_filter: {
-#     filters: {
-#       field: country
-#       value: "us"
-#     }
-#   }
-
+# SOME MAD NONSENSE FOR GIT SME
 
 #   explore: ufo_data {
 #
