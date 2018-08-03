@@ -24,6 +24,11 @@ view: NewView {
     type: number
   }
 
+  dimension: test_dim{
+    label: "just a test"
+    sql: ${country} ;;
+  }
+
 dimension: another_count {
   label: "UFO Data Count"
   type: number
