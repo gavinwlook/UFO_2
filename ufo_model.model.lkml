@@ -48,6 +48,8 @@ explore: ufo_data {
 
 }
 
+explore: TestPDT {}
+
 #dimension: field_name {
 #  type: location
 #  sql_latitude:${field_name_1} ;;

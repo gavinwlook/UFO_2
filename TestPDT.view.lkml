@@ -1,5 +1,6 @@
 view: TestPDT {
   derived_table: {
+    indexes: ["shape"]
     persist_for: "10 hours"
     explore_source: ufo_data {
       column: count {}

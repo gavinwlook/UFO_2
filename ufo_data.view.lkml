@@ -25,20 +25,29 @@ view: ufo_data {
     sql: ${TABLE}.country ;;
   }
 
+#   dimension_group: date_posted {
+#     type: time
+#     timeframes: [
+#       raw,
+#       time,
+#       date,
+#       week,
+#       week_of_year,
+#       month,
+#       quarter,
+#       year
+#     ]
+#     sql: ${TABLE}.date_posted ;;
+#   }
+
   dimension_group: date_posted {
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      week_of_year,
-      month,
-      quarter,
-      year
-    ]
-    sql: ${TABLE}.date_posted ;;
-  }
+     type: time
+     timeframes: [
+       month,
+       year
+     ]
+     sql: ${TABLE}.date_posted ;;
+   }
 
 parameter: year_param {
   suggest_dimension: date_posted_year
@@ -46,10 +55,10 @@ parameter: year_param {
 
 }
 
-parameter: week_param {
-  suggest_dimension: date_posted_week_of_year
-  type: date
-}
+# parameter: week_param {
+#   suggest_dimension: date_posted_week_of_year
+#   type: date
+# }
 
 dimension: year_week {
   type: string
@@ -196,14 +205,14 @@ dimension: year_week {
     value_format: "0"
   }
 
-  measure: count_before_today {
-     type: count
-
-    filters: {
-      field: date_posted_date
-      value: "before yesterday"
-    }
-  }
+#   measure: count_before_today {
+#      type: count
+#
+#     filters: {
+#       field: date_posted_date
+#       value: "before yesterday"
+#     }
+#   }
 
   measure: median {
     type: median
