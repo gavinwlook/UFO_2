@@ -25,6 +25,7 @@ view: ufo_data {
     sql: ${TABLE}.country ;;
   }
 
+
 #   dimension_group: date_posted {
 #     type: time
 #     timeframes: [
