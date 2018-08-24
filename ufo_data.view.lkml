@@ -9,7 +9,7 @@ view: ufo_data {
     sql: CONCAT(${TABLE}.sighting.raw, '  ', ${TABLE}.location) ;;
   }
 
-  dimension: city {
+  dimension: city_name {
     type: string
     sql: ${TABLE}.city ;;
   }
@@ -222,7 +222,7 @@ dimension: year_week {
 
   measure: sum_distinct {
     type: sum_distinct
-    sql: ${city} ;;
+    sql: ${country} ;;
   }
 
 #   measure: test_60 {
