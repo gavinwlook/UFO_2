@@ -142,6 +142,20 @@ dimension: year_week {
 #   }
 #
 
+measure: lat_count {
+  type: number
+  sql: sum(CASE WHEN ${latitude}>0
+      THEN 1
+     ELSE 0
+      END)
+      ;;
+}
+
+measure: percentage {
+  type: number
+  sql: ${lat_count}/${count} ;;
+}
+
 
   dimension: hashed_city {
     type: string
@@ -161,6 +175,16 @@ dimension: year_week {
          [Masked]
        {% endif %}  ;;
     }
+
+dimension: Top_10_Average_Duration {
+  type: number
+  sql:  (select AVG(10duration) from (select ${duration}
+  from ${TABLE} as 10duration
+  order by ${duration} desc
+  limit 10)) ;;
+
+}
+
 
   measure: count {
     type: count
@@ -219,6 +243,19 @@ dimension: year_week {
     type: median
     sql: COUNT(${shape}) ;;
   }
+
+
+  measure: count22 {
+    type: count
+    drill_fields: [location]
+    filters: {
+      field: date_posted_month
+      value: "this month"
+    }
+}
+
+
+
 
   measure: sum_distinct {
     type: sum_distinct
